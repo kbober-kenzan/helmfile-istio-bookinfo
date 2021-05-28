@@ -28,13 +28,68 @@ To utilize a GIT repository as a Helm chart repository the following Helm plugin
 Create a GIT repository on the GIT platform of your choice.
 For this example we will use a public GitHub and private Gitlab repository
 
-- GitHub - https://github.com/kbober-kenzan/istio-bookinfo-helmfile
-- GitLab - https://github.com/kbober-kenzan/istio-bookinfo-helmfile
+- GitHub - https://github.com/kbober-kenzan/helmfile-istiop-bookinfo
+- GitLab - https://gitlab.spectrumflow.net/sspp/platforms/service-mesh/helmfile-istio-bookinfo
 
+Add the repositories as remote origins:
 
+```bash
+  git remote add github-origin git@github.com:kbober-kenzan/helmfile-istio-bookinfo.git
+  git remote add origin git@gitlab.spectrumflow.net:sspp/platforms/service-mesh/helmfile-istio-bookinfo.git
 
+  git remote -v
+```
 
 ## Package and publish Helm charts to GIT Repository
+
+Here we will demonstrate the helm commands to create the individual helm charts for each of the Istio BookInfo components.
+This 'helm-repo'folder serves as Helm repository storing the packaged Helm charts and the Helm genereated repo 'index.yaml' file.
+
+```bash
+  cd helm-repo
+```
+
+### gateway and virtual-service components
+
+```bash
+  helm package ../istio-bookinfo-components/gateway
+```
+
+### service and service-account components
+
+```bash
+  helm package ../istio-bookinfo-components/service
+```
+
+### microservice deployment components
+
+```bash
+  helm package ../istio-bookinfo-components/microservice-productpage
+  helm package ../istio-bookinfo-components/microservice-details
+  helm package ../istio-bookinfo-components/microservice-ratings  
+  helm package ../istio-bookinfo-components/microservice-reviews/v1
+  helm package ../istio-bookinfo-components/microservice-reviews/v2
+  helm package ../istio-bookinfo-components/microservice-reviews/v3
+```
+
+Now that we have packaged up all the Istio BookInfo components into Helm charts we will no create the Helm repository 'index.yaml file:
+
+```bash
+  helm repo index .
+```
+
+We can now push the changes to the GIT repository:
+
+```bash
+  git push -u github-origin main
+```
+
+Now that out changes have been pushed to a GIT repository we can utilize it as a Helm repository with the aid of the 'helm-git' plugin:
+
+```bash
+  helm repo add github-helmfile-istio-bookinfo github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  helm repo add gitlab-helmfile-istio-bookinfo gitlab://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+```
 
 ## Integrate Helm chart repository with Helmfile
 
@@ -42,9 +97,9 @@ For this example we will use a public GitHub and private Gitlab repository
 
 ``` yaml
 repositories:
-  - name: github-kbober-kenzan
+  - name: github
     url: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
-  - name: gitlab-kbober-kenzan
+  - name: gitlab
     url: gitlab://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo 
 ```
 
@@ -78,4 +133,4 @@ repositories:
 
 - [Helm](https://helm.sh/)
 - [Helmfile](https://github.com/roboll/helmfile)
-- [Helm Plugin: helm-git](https://github.com/diwakar-s-maurya/helm-git)
+- [Helm Plugin: helm-git](https://github.com/diwakar-s-maurya/helm-git)s
