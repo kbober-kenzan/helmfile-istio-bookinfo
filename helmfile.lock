@@ -1,0 +1,28 @@
+version: v0.139.6
+dependencies:
+- name: istio-bookinfo-details-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+- name: istio-bookinfo-gateway
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+- name: istio-bookinfo-productpage-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+- name: istio-bookinfo-ratings-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+- name: istio-bookinfo-reviews-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 3.0.0
+- name: istio-bookinfo-reviews-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+- name: istio-bookinfo-reviews-service
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 2.0.0
+- name: istio-bookinfo-service-and-service-accounts
+  repository: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+  version: 1.0.0
+digest: sha256:778ba83d7366435b69fedbac3779be9119c943592d14bf70f145a965c41b34b0
+generated: "2021-05-27T16:40:44.23677-04:00"

@@ -1,0 +1,69 @@
+repositories:
+  - name: github-kbober-kenzan
+    url: github://kbober-kenzan/istio-bookinfo-helmfile:main/helm-repo
+
+releases:
+  - name: istio-bookinfo-gateway
+    chart: github-kbober-kenzan/istio-bookinfo-gateway
+    version: 1.0.0
+    namespace: default
+    installed: true
+    values:
+    - gateway:
+        selector: ingressgateway
+        hostname: example.com
+        httpsRedirect: false
+        tls:
+          enabled: false
+          secretName: bookinfo-tls
+          gatewayNamespace: istio-system
+          acme:
+            enabled: false
+            certManager:
+              version: certmanager.k8s.io/v1alpha1
+            renewBefore: 720h
+            issuerName: letsencrypt
+            issuerKind: ClusterIssuer
+
+  - name: istio-bookinfo-service-and-service-accounts
+    chart: github-kbober-kenzan/istio-bookinfo-service-and-service-accounts
+    version: 1.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-details-service
+    chart: github-kbober-kenzan/istio-bookinfo-details-service
+    version: 1.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-productpage-service
+    chart: github-kbober-kenzan/istio-bookinfo-productpage-service
+    version: 1.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-ratings-service
+    chart: github-kbober-kenzan/istio-bookinfo-ratings-service
+    version: 1.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-reviews-service-001
+    chart: github-kbober-kenzan/istio-bookinfo-reviews-service
+    version: 1.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-reviews-service-002
+    chart: github-kbober-kenzan/istio-bookinfo-reviews-service
+    version: 2.0.0
+    namespace: default
+    installed: true
+
+  - name: istio-bookinfo-reviews-service-003
+    chart: github-kbober-kenzan/istio-bookinfo-reviews-service
+    version: 3.0.0
+    namespace: default
+    installed: false
+    

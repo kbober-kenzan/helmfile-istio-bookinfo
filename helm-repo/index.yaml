@@ -1,0 +1,81 @@
+apiVersion: v1
+entries:
+  istio-bookinfo-details-service:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.501412-04:00"
+    description: Istio Bookinfo Helm chart for Details Micro-Service Kubernetes Manifest objects
+    digest: 6b6b061469164e43bfc75f2f7f2cb4905eb36fc44b83923a5f007b706471424f
+    name: istio-bookinfo-details-service
+    urls:
+    - istio-bookinfo-details-service-1.0.0.tgz
+    version: 1.0.0
+  istio-bookinfo-gateway:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.502065-04:00"
+    description: Istio Bookinfo Helm chart for Gateway Kubernetes Manifest objects
+    digest: d404846a22fc486662ca07704f5ac508fafc6813364b6578deeecbd958bb47c4
+    name: istio-bookinfo-gateway
+    urls:
+    - istio-bookinfo-gateway-1.0.0.tgz
+    version: 1.0.0
+  istio-bookinfo-productpage-service:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.502596-04:00"
+    description: Istio Bookinfo Helm chart for ProductPage Micro-Service Kubernetes Manifest objects
+    digest: 547fc91b62cc178709a2e680ec07edb832eeb081edafc670d4212a558cf7d362
+    name: istio-bookinfo-productpage-service
+    urls:
+    - istio-bookinfo-productpage-service-1.0.0.tgz
+    version: 1.0.0
+  istio-bookinfo-ratings-service:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.503178-04:00"
+    description: Istio Bookinfo Helm chart for Ratings Micro-Service Kubernetes Manifest objects
+    digest: 7e845de70cccbb9b4e24d877ae5d8fea79e3785feebf1c49ba7841a6fcae7a48
+    name: istio-bookinfo-ratings-service
+    urls:
+    - istio-bookinfo-ratings-service-1.0.0.tgz
+    version: 1.0.0
+  istio-bookinfo-reviews-service:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.504521-04:00"
+    description: Istio Bookinfo Helm chart for Reviews Micro-Service Kubernetes Manifest objects
+    digest: 36802a827b820f5fd41d13c9ae1fcc40bb40b80e8a72b33d1f817a4f11b16b2d
+    name: istio-bookinfo-reviews-service
+    urls:
+    - istio-bookinfo-reviews-service-3.0.0.tgz
+    version: 3.0.0
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.504173-04:00"
+    description: Istio Bookinfo Helm chart for Reviews Micro-Service Kubernetes Manifest objects
+    digest: b3208b944be19d889e472d511d72cbbda5e89799fde4f4b16b2082f9c3881a5f
+    name: istio-bookinfo-reviews-service
+    urls:
+    - istio-bookinfo-reviews-service-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.503706-04:00"
+    description: Istio Bookinfo Helm chart for Reviews Micro-Service Kubernetes Manifest objects
+    digest: f9d012c5346f24806c58bf2503170393395e06e45eca316f37ac611794f93bbb
+    name: istio-bookinfo-reviews-service
+    urls:
+    - istio-bookinfo-reviews-service-1.0.0.tgz
+    version: 1.0.0
+  istio-bookinfo-service-and-service-accounts:
+  - apiVersion: v1
+    appVersion: "1.3"
+    created: "2021-05-28T10:51:41.505004-04:00"
+    description: Istio Bookinfo Helm chart for Serivce and ServiceAccount Kubernetes Manifest objects
+    digest: b713465789e0194337d457ca60d7b282d9092d51cfb3223049c882ac3b7a88ba
+    name: istio-bookinfo-service-and-service-accounts
+    urls:
+    - istio-bookinfo-service-and-service-accounts-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-05-28T10:51:41.497214-04:00"
